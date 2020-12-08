@@ -1,0 +1,54 @@
+@import 'variables';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+    font-family: $maven;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+  
+    background-color: $white;
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $maven;
+  margin-top: 0;
+  color: $secondary;
+  margin-bottom: 0px;
+}
+p {
+    font-family: $maven;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px; 
+    margin: 0px;
+    color: $accent;
+  }
+
+  .App{
+    padding: $padding-md;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(400px, 1fr));
+    row-gap: 1.4em;
+    @media #{$xs-layout} {
+      grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }

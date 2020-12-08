@@ -1,0 +1,128 @@
+@import 'variables';
+
+.st{
+    border: 1px solid $grey;
+    border-radius: 8px;
+    width: 450px;
+
+    @media #{$xs-layout} {
+        width: auto !important;
+    }
+    &__header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: $padding-sm;
+      border-bottom: 1px solid $grey;
+      h3{
+          padding-left: $padding-xs;
+      }  
+      img{
+          height: 28px;
+      }
+    }
+
+    &__tab-wrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__left-container,&__right-container{
+             display: flex;
+             justify-content: space-between;
+             flex-direction: row;
+             align-items: center;
+                div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 5px;
+                cursor: pointer;
+
+                }
+             &--visible{
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            &--hidden{
+                  display: none !important;  
+            }
+        }
+        
+    }
+    &__tabs-row{
+        position: relative;
+        display: flex;
+        flex: auto;
+        align-self: stretch;
+        overflow: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
+        transform: translateX(0px);
+        scroll-behavior: smooth;
+        background-color: $light-grey;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    &__tab{
+        position: relative;
+        padding: $padding-xs $padding-md;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease-in-out;
+        background-color: $light-grey;
+
+        p{
+            word-break: keep-all;
+        }
+
+        &:hover{
+            border-left: 1px solid $grey;
+            border-right: 1px solid $grey;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &--active{
+            border-bottom: 2px solid $primary;
+            p{
+                color: $primary;
+            }
+        }
+        &--close{
+            position: absolute;
+            right: 3px;
+            top: -2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        span{
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: $padding-xs * 0.8;
+
+                svg{
+                    color: $grey !important;
+                }
+            }
+        }
+    }
+
+    &__tab-content{
+        padding: $padding-sm;
+        h3{
+            opacity: 0.8;
+        }
+    }
+}
